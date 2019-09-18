@@ -1,0 +1,13 @@
+version: '3'
+services:
+  broadlink-node-red:
+    build:
+        context: broadlink-node-red
+    container_name: broadlink-node-red
+    network_mode: "host"
+    volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - ./node-red:/root/.node-red
+    environment:
+      TZ: "Asia/Tokyo"
+    tty: true
